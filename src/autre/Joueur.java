@@ -1,27 +1,19 @@
 package autre;
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
-
-import application.LanceurCluedo;
-
 public class Joueur {
 
 	private String nom;
 	private String couleur;
-	private List<Carte> lc = new ArrayList<Carte>();
 	private boolean vous;
 	private int nbCarte;
+	private int numJoueur;
 
-	public Joueur(String nom, String couleur, boolean vous, int nbCarte) {
+	public Joueur(String nom, String couleur, int numJoueur, boolean vous, int nbCarte) {
 		this.nom = nom;
 		this.couleur = couleur;
 		this.vous = vous;
 		this.nbCarte = nbCarte;
+		this.numJoueur = numJoueur;
 	}
 
 	public String getNom() {
@@ -40,53 +32,7 @@ public class Joueur {
 		this.couleur = couleur;
 	}
 
-	public List<Carte> getLc() {
-		return lc;
-	}
-
-	public void setLc(int type) {
-
-		String lien = "";
-		String etat = "O";
-		String genre = "";
-		//type == 1 => SuperCluedo
-		if (type == 1) {
-			for (int i = 0; i < 3; i++) {
-				if (i == 0) {
-					lien = "src\\autre\\liste\\Cluedo\\guilty.txt";
-					genre = "Suspect";
-				}
-				else if (i == 1) {
-					lien = "src\\autre\\liste\\Cluedo\\weapon.txt";
-					genre = "Arme";
-				}
-				else if (i == 2) {
-					lien = "src\\autre\\liste\\Cluedo\\places.txt";
-					genre = "Lieu";
-				}
-
-				try{
-					InputStream flux = new FileInputStream(lien); 
-					InputStreamReader lecture = new InputStreamReader(flux);
-					BufferedReader buff = new BufferedReader(lecture);
-					String ligne;
-					while ((ligne=buff.readLine())!=null){
-						Carte c = new Carte(ligne,genre,etat);
-						this.lc.add(c);
-					}
-					buff.close(); 
-				}		
-				catch (Exception e){
-					System.out.println(e.toString());
-				}
-
-			}
-		}
-	}
-
-	public void setLc(List<Carte> lc) {
-		this.lc = lc;
-	}
+	
 
 	public boolean isVous() {
 		return vous;
@@ -104,7 +50,11 @@ public class Joueur {
 		this.nbCarte = nbCarte;
 	}
 
-	public void maj() {
+	public int getNumJoueur() {
+		return numJoueur;
+	}
+
+	/*public void maj() {
 		for (Hypothese h: LanceurCluedo.getHyp()) {
 			for (Joueur j: LanceurCluedo.getLj()) {
 				if (j.getNom().equals(h.getJoueurPasOk())) {
@@ -181,5 +131,5 @@ public class Joueur {
 				}
 			}
 		}
-	}
+	}*/
 }

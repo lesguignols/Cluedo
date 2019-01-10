@@ -140,6 +140,7 @@ public class SaisieCarteController {
 	@FXML
 	void clickOnSuivant(ActionEvent event) throws IOException {
 		boolean ok = false;
+		int numJoueur = 1;
 		for (Joueur joueur: LanceurCluedo.getLj()) {
 			if (joueur.isVous()) {
 				if (joueur.getNbCarte() == 3) {
@@ -150,33 +151,18 @@ public class SaisieCarteController {
 							!carte1.getValue().equals(carte3.getValue()) &&
 							!carte2.getValue().equals(carte3.getValue())) {
 						ok = true;
-						for (Joueur j: LanceurCluedo.getLj()) {
-							if (j.isVous()) {
-								for (Carte c: j.getLc()) {
-									if (c.getNom().equals(carte1.getValue()) ||
-											c.getNom().equals(carte2.getValue()) ||
-											c.getNom().equals(carte3.getValue())) {
-										c.setEtat("V");
-										LanceurCluedo.getLcj().add(c.getNom());
-									}
-									else if (!c.getNom().equals(carte1.getValue()) ||
-											!c.getNom().equals(carte2.getValue()) ||
-											!c.getNom().equals(carte3.getValue())) {
-										c.setEtat("X");
-									}
-								}
+						for (Carte c: LanceurCluedo.getLc()) {
+							if (c.getNom().equals(carte1.getValue()) ||
+									c.getNom().equals(carte2.getValue()) ||
+									c.getNom().equals(carte3.getValue())) {
+								c.setEtat(numJoueur, "V");
 							}
-							else if (!j.isVous()) {
-								for (Carte c: j.getLc()) {
-									if (c.getNom().equals(carte1.getValue()) ||
-											c.getNom().equals(carte2.getValue()) ||
-											c.getNom().equals(carte3.getValue())) {
-										c.setEtat("X");
-									}
-								}
+							else if (!c.getNom().equals(carte1.getValue()) &&
+									!c.getNom().equals(carte2.getValue()) &&
+									!c.getNom().equals(carte3.getValue())) {
+								c.setEtat(numJoueur, "X");
 							}
 						}
-
 					}
 				}
 
@@ -194,36 +180,20 @@ public class SaisieCarteController {
 
 							!carte3.getValue().equals(carte4.getValue())) {
 						ok = true;
-						for (Joueur j: LanceurCluedo.getLj()) {
-							if (j.isVous()) {
-								for (Carte c: j.getLc()) {
-									if (c.getNom().equals(carte1.getValue()) ||
-											c.getNom().equals(carte2.getValue()) ||
-											c.getNom().equals(carte3.getValue()) ||
-											c.getNom().equals(carte4.getValue())) {
-										c.setEtat("V");
-										LanceurCluedo.getLcj().add(c.getNom());
-									}
-									else if (!c.getNom().equals(carte1.getValue()) ||
-											!c.getNom().equals(carte2.getValue()) ||
-											!c.getNom().equals(carte3.getValue()) ||
-											!c.getNom().equals(carte4.getValue())) {
-										c.setEtat("X");
-									}
-								}
+						for (Carte c: LanceurCluedo.getLc()) {
+							if (c.getNom().equals(carte1.getValue()) ||
+									c.getNom().equals(carte2.getValue()) ||
+									c.getNom().equals(carte3.getValue()) ||
+									c.getNom().equals(carte4.getValue())) {
+								c.setEtat(numJoueur, "V");
 							}
-							else if (!j.isVous()) {
-								for (Carte c: j.getLc()) {
-									if (c.getNom().equals(carte1.getValue()) ||
-											c.getNom().equals(carte2.getValue()) ||
-											c.getNom().equals(carte3.getValue()) ||
-											c.getNom().equals(carte4.getValue())) {
-										c.setEtat("X");
-									}
-								}
+							else if (!c.getNom().equals(carte1.getValue()) &&
+									!c.getNom().equals(carte2.getValue()) &&
+									!c.getNom().equals(carte3.getValue()) &&
+									!c.getNom().equals(carte4.getValue())) {
+								c.setEtat(numJoueur, "X");
 							}
 						}
-
 					}
 				}
 
@@ -248,39 +218,22 @@ public class SaisieCarteController {
 
 							!carte4.getValue().equals(carte5.getValue())) {
 						ok = true;
-						for (Joueur j: LanceurCluedo.getLj()) {
-							if (j.isVous()) {
-								for (Carte c: j.getLc()) {
-									if (c.getNom().equals(carte1.getValue()) ||
-											c.getNom().equals(carte2.getValue()) ||
-											c.getNom().equals(carte3.getValue()) ||
-											c.getNom().equals(carte4.getValue()) ||
-											c.getNom().equals(carte5.getValue())) {
-										c.setEtat("V");
-										LanceurCluedo.getLcj().add(c.getNom());
-									}
-									else if (!c.getNom().equals(carte1.getValue()) ||
-											!c.getNom().equals(carte2.getValue()) ||
-											!c.getNom().equals(carte3.getValue()) ||
-											!c.getNom().equals(carte4.getValue()) ||
-											!c.getNom().equals(carte5.getValue())) {
-										c.setEtat("X");
-									}
-								}
+						for (Carte c: LanceurCluedo.getLc()) {
+							if (c.getNom().equals(carte1.getValue()) ||
+									c.getNom().equals(carte2.getValue()) ||
+									c.getNom().equals(carte3.getValue()) ||
+									c.getNom().equals(carte4.getValue()) ||
+									c.getNom().equals(carte5.getValue())) {
+								c.setEtat(numJoueur, "V");
 							}
-							else if (!j.isVous()) {
-								for (Carte c: j.getLc()) {
-									if (c.getNom().equals(carte1.getValue()) ||
-											c.getNom().equals(carte2.getValue()) ||
-											c.getNom().equals(carte3.getValue()) ||
-											c.getNom().equals(carte4.getValue()) ||
-											c.getNom().equals(carte5.getValue())) {
-										c.setEtat("X");
-									}
-								}
+							else if (!c.getNom().equals(carte1.getValue()) &&
+									!c.getNom().equals(carte2.getValue()) &&
+									!c.getNom().equals(carte3.getValue()) &&
+									!c.getNom().equals(carte4.getValue()) &&
+									!c.getNom().equals(carte5.getValue())) {
+								c.setEtat(numJoueur, "X");
 							}
 						}
-
 					}
 				}
 
@@ -312,42 +265,24 @@ public class SaisieCarteController {
 
 							!carte5.getValue().equals(carte6.getValue())) {
 						ok = true;
-						for (Joueur j: LanceurCluedo.getLj()) {
-							if (j.isVous()) {
-								for (Carte c: j.getLc()) {
-									if (c.getNom().equals(carte1.getValue()) ||
-											c.getNom().equals(carte2.getValue()) ||
-											c.getNom().equals(carte3.getValue()) ||
-											c.getNom().equals(carte4.getValue()) ||
-											c.getNom().equals(carte5.getValue()) ||
-											c.getNom().equals(carte6.getValue())) {
-										c.setEtat("V");
-										LanceurCluedo.getLcj().add(c.getNom());
-									}
-									else if (!c.getNom().equals(carte1.getValue()) ||
-											!c.getNom().equals(carte2.getValue()) ||
-											!c.getNom().equals(carte3.getValue()) ||
-											!c.getNom().equals(carte4.getValue()) ||
-											!c.getNom().equals(carte5.getValue()) ||
-											!c.getNom().equals(carte6.getValue())) {
-										c.setEtat("X");
-									}
-								}
+						for (Carte c: LanceurCluedo.getLc()) {
+							if (c.getNom().equals(carte1.getValue()) ||
+									c.getNom().equals(carte2.getValue()) ||
+									c.getNom().equals(carte3.getValue()) ||
+									c.getNom().equals(carte4.getValue()) ||
+									c.getNom().equals(carte5.getValue()) ||
+									c.getNom().equals(carte6.getValue())) {
+								c.setEtat(numJoueur, "V");
 							}
-							else if (!j.isVous()) {
-								for (Carte c: j.getLc()) {
-									if (c.getNom().equals(carte1.getValue()) ||
-											c.getNom().equals(carte2.getValue()) ||
-											c.getNom().equals(carte3.getValue()) ||
-											c.getNom().equals(carte4.getValue()) ||
-											c.getNom().equals(carte5.getValue()) ||
-											c.getNom().equals(carte6.getValue())) {
-										c.setEtat("X");
-									}
-								}
+							else if (!c.getNom().equals(carte1.getValue()) &&
+									!c.getNom().equals(carte2.getValue()) &&
+									!c.getNom().equals(carte3.getValue()) &&
+									!c.getNom().equals(carte4.getValue()) &&
+									!c.getNom().equals(carte5.getValue()) &&
+									!c.getNom().equals(carte6.getValue())) {
+								c.setEtat(numJoueur, "X");
 							}
 						}
-
 					}
 				}
 
@@ -387,45 +322,26 @@ public class SaisieCarteController {
 
 							!carte6.getValue().equals(carte7.getValue())) {
 						ok = true;
-						for (Joueur j: LanceurCluedo.getLj()) {
-							if (j.isVous()) {
-								for (Carte c: j.getLc()) {
-									if (c.getNom().equals(carte1.getValue()) ||
-											c.getNom().equals(carte2.getValue()) ||
-											c.getNom().equals(carte3.getValue()) ||
-											c.getNom().equals(carte4.getValue()) ||
-											c.getNom().equals(carte5.getValue()) ||
-											c.getNom().equals(carte6.getValue()) ||
-											c.getNom().equals(carte7.getValue())) {
-										c.setEtat("V");
-										LanceurCluedo.getLcj().add(c.getNom());
-									}
-									else if (!c.getNom().equals(carte1.getValue()) ||
-											!c.getNom().equals(carte2.getValue()) ||
-											!c.getNom().equals(carte3.getValue()) ||
-											!c.getNom().equals(carte4.getValue()) ||
-											!c.getNom().equals(carte5.getValue()) ||
-											!c.getNom().equals(carte6.getValue()) ||
-											!c.getNom().equals(carte7.getValue())) {
-										c.setEtat("X");
-									}
-								}
+						for (Carte c: LanceurCluedo.getLc()) {
+							if (c.getNom().equals(carte1.getValue()) ||
+									c.getNom().equals(carte2.getValue()) ||
+									c.getNom().equals(carte3.getValue()) ||
+									c.getNom().equals(carte4.getValue()) ||
+									c.getNom().equals(carte5.getValue()) ||
+									c.getNom().equals(carte6.getValue()) ||
+									c.getNom().equals(carte7.getValue())) {
+								c.setEtat(numJoueur, "V");
 							}
-							else if (!j.isVous()) {
-								for (Carte c: j.getLc()) {
-									if (c.getNom().equals(carte1.getValue()) ||
-											c.getNom().equals(carte2.getValue()) ||
-											c.getNom().equals(carte3.getValue()) ||
-											c.getNom().equals(carte4.getValue()) ||
-											c.getNom().equals(carte5.getValue()) ||
-											c.getNom().equals(carte6.getValue()) ||
-											c.getNom().equals(carte7.getValue())) {
-										c.setEtat("X");
-									}
-								}
+							else if (!c.getNom().equals(carte1.getValue()) &&
+									!c.getNom().equals(carte2.getValue()) &&
+									!c.getNom().equals(carte3.getValue()) &&
+									!c.getNom().equals(carte4.getValue()) &&
+									!c.getNom().equals(carte5.getValue()) &&
+									!c.getNom().equals(carte6.getValue()) &&
+									!c.getNom().equals(carte7.getValue())) {
+								c.setEtat(numJoueur, "X");
 							}
 						}
-
 					}
 				}
 
@@ -484,51 +400,30 @@ public class SaisieCarteController {
 
 							!carte8.getValue().equals(carte9.getValue())) {
 						ok = true;
-						for (Joueur j: LanceurCluedo.getLj()) {
-							if (j.isVous()) {
-								for (Carte c: j.getLc()) {
-									if (c.getNom().equals(carte1.getValue()) ||
-											c.getNom().equals(carte2.getValue()) ||
-											c.getNom().equals(carte3.getValue()) ||
-											c.getNom().equals(carte4.getValue()) ||
-											c.getNom().equals(carte5.getValue()) ||
-											c.getNom().equals(carte6.getValue()) ||
-											c.getNom().equals(carte7.getValue()) ||
-											c.getNom().equals(carte8.getValue()) ||
-											c.getNom().equals(carte9.getValue())) {
-										c.setEtat("V");
-										LanceurCluedo.getLcj().add(c.getNom());
-									}
-									else if (!c.getNom().equals(carte1.getValue()) ||
-											!c.getNom().equals(carte2.getValue()) ||
-											!c.getNom().equals(carte3.getValue()) ||
-											!c.getNom().equals(carte4.getValue()) ||
-											!c.getNom().equals(carte5.getValue()) ||
-											!c.getNom().equals(carte6.getValue()) ||
-											!c.getNom().equals(carte7.getValue()) ||
-											!c.getNom().equals(carte8.getValue()) ||
-											!c.getNom().equals(carte9.getValue())) {
-										c.setEtat("X");
-									}
-								}
+						for (Carte c: LanceurCluedo.getLc()) {
+							if (c.getNom().equals(carte1.getValue()) ||
+									c.getNom().equals(carte2.getValue()) ||
+									c.getNom().equals(carte3.getValue()) ||
+									c.getNom().equals(carte4.getValue()) ||
+									c.getNom().equals(carte5.getValue()) ||
+									c.getNom().equals(carte6.getValue()) ||
+									c.getNom().equals(carte7.getValue()) ||
+									c.getNom().equals(carte8.getValue()) ||
+									c.getNom().equals(carte9.getValue())) {
+								c.setEtat(numJoueur, "V");
 							}
-							else if (!j.isVous()) {
-								for (Carte c: j.getLc()) {
-									if (c.getNom().equals(carte1.getValue()) ||
-											c.getNom().equals(carte2.getValue()) ||
-											c.getNom().equals(carte3.getValue()) ||
-											c.getNom().equals(carte4.getValue()) ||
-											c.getNom().equals(carte5.getValue()) ||
-											c.getNom().equals(carte6.getValue()) ||
-											c.getNom().equals(carte7.getValue()) ||
-											c.getNom().equals(carte8.getValue()) ||
-											c.getNom().equals(carte9.getValue())) {
-										c.setEtat("X");
-									}
-								}
+							else if (!c.getNom().equals(carte1.getValue()) &&
+									!c.getNom().equals(carte2.getValue()) &&
+									!c.getNom().equals(carte3.getValue()) &&
+									!c.getNom().equals(carte4.getValue()) &&
+									!c.getNom().equals(carte5.getValue()) &&
+									!c.getNom().equals(carte6.getValue()) &&
+									!c.getNom().equals(carte7.getValue()) &&
+									!c.getNom().equals(carte8.getValue()) &&
+									!c.getNom().equals(carte9.getValue())) {
+								c.setEtat(numJoueur, "X");
 							}
 						}
-
 					}
 				}
 

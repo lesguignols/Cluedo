@@ -79,7 +79,6 @@ public class LanceurCluedo extends Application {
 
 	public static void setLs(int t) {
 		String lien = "";
-		String etat = "O";
 		String genre = "Suspect";
 		//type == 1 => SuperCluedo
 		if (t == 1) {
@@ -91,8 +90,9 @@ public class LanceurCluedo extends Application {
 				BufferedReader buff = new BufferedReader(lecture);
 				String ligne;
 				while ((ligne=buff.readLine())!=null){
-					Carte c = new Carte(ligne,genre,etat);
+					Carte c = new Carte(ligne,genre);
 					ls.add(c);
+					lc.add(c);
 				}
 				buff.close(); 
 			}		
@@ -109,7 +109,6 @@ public class LanceurCluedo extends Application {
 
 	public static void setLa(int t) {
 		String lien = "";
-		String etat = "O";
 		String genre = "Arme";
 		//type == 1 => SuperCluedo
 		if (t == 1) {
@@ -121,8 +120,9 @@ public class LanceurCluedo extends Application {
 				BufferedReader buff = new BufferedReader(lecture);
 				String ligne;
 				while ((ligne=buff.readLine())!=null){
-					Carte c = new Carte(ligne,genre,etat);
+					Carte c = new Carte(ligne,genre);
 					la.add(c);
+					lc.add(c);
 				}
 				buff.close(); 
 			}		
@@ -138,7 +138,6 @@ public class LanceurCluedo extends Application {
 
 	public static void setLl(int t) {
 		String lien = "";
-		String etat = "O";
 		String genre = "Lieu";
 		//type == 1 => SuperCluedo
 		if (t == 1) {
@@ -150,8 +149,9 @@ public class LanceurCluedo extends Application {
 				BufferedReader buff = new BufferedReader(lecture);
 				String ligne;
 				while ((ligne=buff.readLine())!=null){
-					Carte c = new Carte(ligne,genre,etat);
+					Carte c = new Carte(ligne,genre);
 					ll.add(c);
+					lc.add(c);
 				}
 				buff.close(); 
 			}		

@@ -42,7 +42,7 @@
                <content>
                   <SplitPane dividerPositions="0.5, 0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
                     <items>
-                      <AnchorPane maxHeight="182.0" minHeight="182.0" prefHeight="100.0" prefWidth="160.0">
+                      <AnchorPane maxHeight="182.0" maxWidth="600.0" minHeight="182.0" minWidth="600.0" prefHeight="100.0" prefWidth="600.0">
                            <children>
                               <TableView fx:id="listeSuspect" layoutX="75.0" prefHeight="182.0" prefWidth="15.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                 <columns>
@@ -60,7 +60,7 @@
                               </TableView>
                            </children>
                         </AnchorPane>
-                      <AnchorPane maxHeight="182.0" minHeight="182.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                      <AnchorPane maxHeight="182.0" maxWidth="600.0" minHeight="182.0" minWidth="600.0" prefHeight="100.0" prefWidth="600.0">
                            <children>
                               <TableView fx:id="listeArme" prefHeight="182.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <columnResizePolicy>
@@ -78,7 +78,7 @@
                               </TableView>
                            </children>
                         </AnchorPane>
-                        <AnchorPane maxHeight="182.0" minHeight="182.0" prefHeight="200.0" prefWidth="200.0">
+                        <AnchorPane maxHeight="182.0" maxWidth="600.0" minHeight="182.0" minWidth="600.0" prefHeight="182.0" prefWidth="600.0">
                            <children>
                               <TableView fx:id="listeLieu" prefHeight="182.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <columnResizePolicy>

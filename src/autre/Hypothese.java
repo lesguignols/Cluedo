@@ -16,7 +16,7 @@ public class Hypothese {
 		this.lieu = lieu;
 		this.joueurDemandant = joueurDemandant;
 		this.joueurPasOk = joueurPasOk;
-		this.modifListeCarte();
+		//this.modifListeCarte();
 	}
 
 	public String getSuspect() {
@@ -59,7 +59,7 @@ public class Hypothese {
 		this.joueurPasOk = joueurPasOk;
 	}
 
-	private void modifListeCarte() {
+	/*private void modifListeCarte() {
 		int numJD = -1, numJPO = -2, iterateur = 0;
 		for (Joueur j: LanceurCluedo.getLj()) {
 			if (j.getNom().equals(this.joueurDemandant)) {
@@ -313,5 +313,5 @@ public class Hypothese {
 				}
 			}
 		}
-	}
+	}*/
 }

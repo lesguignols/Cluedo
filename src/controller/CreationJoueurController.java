@@ -237,9 +237,9 @@ public class CreationJoueurController {
     				!saisieNom1.getText().equals(saisieNom3.getText()) &&
     				!saisieNom2.getText().equals(saisieNom3.getText())) {
     			ok = true;
-    			LanceurCluedo.getLj().add(new Joueur(saisieNom1.getText(),"Red",vous1.isSelected(),Integer.parseInt(nbCarte1.getValue())));
-    			LanceurCluedo.getLj().add(new Joueur(saisieNom2.getText(),"Red",vous2.isSelected(),Integer.parseInt(nbCarte2.getValue())));
-    			LanceurCluedo.getLj().add(new Joueur(saisieNom3.getText(),"Red",vous3.isSelected(),Integer.parseInt(nbCarte3.getValue())));
+    			LanceurCluedo.getLj().add(new Joueur(saisieNom1.getText(),"Red",1,vous1.isSelected(),Integer.parseInt(nbCarte1.getValue())));
+    			LanceurCluedo.getLj().add(new Joueur(saisieNom2.getText(),"Red",2,vous2.isSelected(),Integer.parseInt(nbCarte2.getValue())));
+    			LanceurCluedo.getLj().add(new Joueur(saisieNom3.getText(),"Red",3,vous3.isSelected(),Integer.parseInt(nbCarte3.getValue())));
     		}
     	}
     	else if (j4.isSelected()) {
@@ -253,10 +253,10 @@ public class CreationJoueurController {
     				!saisieNom2.getText().equals(saisieNom4.getText()) &&
     				!saisieNom3.getText().equals(saisieNom4.getText())) {
     			ok = true;
-    			LanceurCluedo.getLj().add(new Joueur(saisieNom1.getText(),"Red",vous1.isSelected(),Integer.parseInt(nbCarte1.getValue())));
-    			LanceurCluedo.getLj().add(new Joueur(saisieNom2.getText(),"Red",vous2.isSelected(),Integer.parseInt(nbCarte2.getValue())));
-    			LanceurCluedo.getLj().add(new Joueur(saisieNom3.getText(),"Red",vous3.isSelected(),Integer.parseInt(nbCarte3.getValue())));
-    			LanceurCluedo.getLj().add(new Joueur(saisieNom4.getText(),"Red",vous4.isSelected(),Integer.parseInt(nbCarte4.getValue())));
+    			LanceurCluedo.getLj().add(new Joueur(saisieNom1.getText(),"Red",1,vous1.isSelected(),Integer.parseInt(nbCarte1.getValue())));
+    			LanceurCluedo.getLj().add(new Joueur(saisieNom2.getText(),"Red",2,vous2.isSelected(),Integer.parseInt(nbCarte2.getValue())));
+    			LanceurCluedo.getLj().add(new Joueur(saisieNom3.getText(),"Red",3,vous3.isSelected(),Integer.parseInt(nbCarte3.getValue())));
+    			LanceurCluedo.getLj().add(new Joueur(saisieNom4.getText(),"Red",4,vous4.isSelected(),Integer.parseInt(nbCarte4.getValue())));
     		}
     	}
     	else if (j5.isSelected()) {
@@ -275,11 +275,11 @@ public class CreationJoueurController {
     				!saisieNom3.getText().equals(saisieNom5.getText()) &&
     				!saisieNom4.getText().equals(saisieNom5.getText())) {
     			ok = true;
-    			LanceurCluedo.getLj().add(new Joueur(saisieNom1.getText(),"Red",vous1.isSelected(),Integer.parseInt(nbCarte1.getValue())));
-    			LanceurCluedo.getLj().add(new Joueur(saisieNom2.getText(),"Red",vous2.isSelected(),Integer.parseInt(nbCarte2.getValue())));
-    			LanceurCluedo.getLj().add(new Joueur(saisieNom3.getText(),"Red",vous3.isSelected(),Integer.parseInt(nbCarte3.getValue())));
-    			LanceurCluedo.getLj().add(new Joueur(saisieNom4.getText(),"Red",vous4.isSelected(),Integer.parseInt(nbCarte4.getValue())));
-    			LanceurCluedo.getLj().add(new Joueur(saisieNom5.getText(),"Red",vous5.isSelected(),Integer.parseInt(nbCarte5.getValue())));
+    			LanceurCluedo.getLj().add(new Joueur(saisieNom1.getText(),"Red",1,vous1.isSelected(),Integer.parseInt(nbCarte1.getValue())));
+    			LanceurCluedo.getLj().add(new Joueur(saisieNom2.getText(),"Red",2,vous2.isSelected(),Integer.parseInt(nbCarte2.getValue())));
+    			LanceurCluedo.getLj().add(new Joueur(saisieNom3.getText(),"Red",3,vous3.isSelected(),Integer.parseInt(nbCarte3.getValue())));
+    			LanceurCluedo.getLj().add(new Joueur(saisieNom4.getText(),"Red",4,vous4.isSelected(),Integer.parseInt(nbCarte4.getValue())));
+    			LanceurCluedo.getLj().add(new Joueur(saisieNom5.getText(),"Red",5,vous5.isSelected(),Integer.parseInt(nbCarte5.getValue())));
     		}
     	}
     	else if (j6.isSelected()) {
@@ -304,20 +304,17 @@ public class CreationJoueurController {
     				!saisieNom5.getText().equals(saisieNom6.getText()) 
     				) {
     			ok = true;
-    			LanceurCluedo.getLj().add(new Joueur(saisieNom1.getText(),"Red",vous1.isSelected(),Integer.parseInt(nbCarte1.getValue())));
-    			LanceurCluedo.getLj().add(new Joueur(saisieNom2.getText(),"Red",vous2.isSelected(),Integer.parseInt(nbCarte2.getValue())));
-    			LanceurCluedo.getLj().add(new Joueur(saisieNom3.getText(),"Red",vous3.isSelected(),Integer.parseInt(nbCarte3.getValue())));
-    			LanceurCluedo.getLj().add(new Joueur(saisieNom4.getText(),"Red",vous4.isSelected(),Integer.parseInt(nbCarte4.getValue())));
-    			LanceurCluedo.getLj().add(new Joueur(saisieNom5.getText(),"Red",vous5.isSelected(),Integer.parseInt(nbCarte5.getValue())));
-    			LanceurCluedo.getLj().add(new Joueur(saisieNom6.getText(),"Red",vous6.isSelected(),Integer.parseInt(nbCarte6.getValue())));
+    			LanceurCluedo.getLj().add(new Joueur(saisieNom1.getText(),"Red",1,vous1.isSelected(),Integer.parseInt(nbCarte1.getValue())));
+    			LanceurCluedo.getLj().add(new Joueur(saisieNom2.getText(),"Red",2,vous2.isSelected(),Integer.parseInt(nbCarte2.getValue())));
+    			LanceurCluedo.getLj().add(new Joueur(saisieNom3.getText(),"Red",3,vous3.isSelected(),Integer.parseInt(nbCarte3.getValue())));
+    			LanceurCluedo.getLj().add(new Joueur(saisieNom4.getText(),"Red",4,vous4.isSelected(),Integer.parseInt(nbCarte4.getValue())));
+    			LanceurCluedo.getLj().add(new Joueur(saisieNom5.getText(),"Red",5,vous5.isSelected(),Integer.parseInt(nbCarte5.getValue())));
+    			LanceurCluedo.getLj().add(new Joueur(saisieNom6.getText(),"Red",6,vous6.isSelected(),Integer.parseInt(nbCarte6.getValue())));
     		}
     	}
     	
     	if (ok) {
-			LanceurCluedo.getLj().add(new Joueur("Le jeu", "White", false,3));
-    		for (Joueur j: LanceurCluedo.getLj()) {
-    			j.setLc(LanceurCluedo.getType());
-    		}
+			LanceurCluedo.getLj().add(new Joueur("Le jeu", "White", 7, false,3));
     		LanceurCluedo.setLs(LanceurCluedo.getType());
     		LanceurCluedo.setLa(LanceurCluedo.getType());
     		LanceurCluedo.setLl(LanceurCluedo.getType());
