@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+
+<BorderPane fx:id="borderpane" prefHeight="600.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="controller.MenuCluedoController">
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="jouer" layoutX="262.5" layoutY="126.75" maxHeight="31.0" maxWidth="75.0" minHeight="31.0" minWidth="75.0" mnemonicParsing="false" onAction="#clickOnJouer" text="Jouer" />
+            <Button fx:id="solution" layoutX="262.5" layoutY="284.5" maxHeight="31.0" maxWidth="75.0" minHeight="31.0" minWidth="75.0" mnemonicParsing="false" onAction="#clickOnSolution" text="Solution" />
+            <Button fx:id="quitter" layoutX="262.5" layoutY="442.25" maxHeight="31.0" maxWidth="75.0" minHeight="31.0" minWidth="75.0" mnemonicParsing="false" onAction="#clickOnQuitter" text="Quitter" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

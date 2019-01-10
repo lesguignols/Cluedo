@@ -1,0 +1,9 @@
+Salle de réception
+Salle de billard
+Jardin d'hiver
+Salle à manger
+Entrée
+Cuisine
+Bibliothèque
+Salon
+Bureau

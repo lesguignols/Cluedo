@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="150.0" minHeight="150.0" prefHeight="150.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AjoutCarteController">
+   <center>
+      <AnchorPane maxHeight="150.0" minHeight="150.0" prefHeight="150.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="ok" layoutX="168.0" layoutY="105.0" mnemonicParsing="false" onAction="#clickOnOk" text="Ok" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="167.5" AnchorPane.rightAnchor="167.5" AnchorPane.topAnchor="105.0" />
+            <ChoiceBox fx:id="carte" layoutX="125.0" layoutY="60.0" prefWidth="150.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="125.0" AnchorPane.rightAnchor="125.0" AnchorPane.topAnchor="60.0" />
+            <Label fx:id="nom" alignment="CENTER" layoutX="90.0" layoutY="14.0" text="Le joueur vous a révélé quelle carte?" textAlignment="CENTER" AnchorPane.bottomAnchor="101.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="14.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

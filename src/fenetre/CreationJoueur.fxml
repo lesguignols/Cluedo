@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CreationJoueurController">
+   <children>
+      <Label layoutX="137.0" layoutY="57.0" text="Nombre de joueur">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Label>
+      <CheckBox fx:id="j3" layoutX="91.0" layoutY="123.0" mnemonicParsing="false" onAction="#clickOnJ3" selected="true" text="3 joueurs" />
+      <CheckBox fx:id="j4" layoutX="201.0" layoutY="123.0" mnemonicParsing="false" onAction="#clickOnJ4" text="4 joueurs" />
+      <CheckBox fx:id="j5" layoutX="324.0" layoutY="123.0" mnemonicParsing="false" onAction="#clickOnJ5" text="5 joueurs" />
+      <CheckBox fx:id="j6" layoutX="440.0" layoutY="123.0" mnemonicParsing="false" onAction="#clickOnJ6" text="6 joueurs" />
+      <Label layoutX="105.0" layoutY="168.0" text="Nom joueur" />
+      <Label layoutX="268.0" layoutY="168.0" text="Nombre de carte" />
+      <TextField fx:id="saisieNom1" layoutX="56.0" layoutY="199.0" promptText="Nom du joueur 1" />
+      <ComboBox fx:id="nbCarte1" layoutX="272.0" layoutY="199.0" prefWidth="105.0" />
+      <CheckBox fx:id="vous1" layoutX="422.0" layoutY="204.0" mnemonicParsing="false" onAction="#clickOnVous1" text="Êtes-vous ce joueur?" />
+      <TextField fx:id="saisieNom2" layoutX="56.0" layoutY="250.0" promptText="Nom du joueur 2" />
+      <ComboBox fx:id="nbCarte2" layoutX="272.0" layoutY="250.0" prefWidth="105.0" />
+      <CheckBox fx:id="vous2" layoutX="422.0" layoutY="255.0" mnemonicParsing="false" onAction="#clickOnVous2" text="Êtes-vous ce joueur?" />
+      <TextField fx:id="saisieNom3" layoutX="56.0" layoutY="301.0" promptText="Nom du joueur 3" />
+      <ComboBox fx:id="nbCarte3" layoutX="272.0" layoutY="301.0" prefWidth="105.0" />
+      <CheckBox fx:id="vous3" layoutX="422.0" layoutY="306.0" mnemonicParsing="false" onAction="#clickOnVous3" text="Êtes-vous ce joueur?" />
+      <TextField fx:id="saisieNom4" layoutX="56.0" layoutY="352.0" promptText="Nom du joueur 4" visible="false" />
+      <ComboBox fx:id="nbCarte4" layoutX="272.0" layoutY="352.0" prefWidth="105.0" visible="false" />
+      <CheckBox fx:id="vous4" layoutX="422.0" layoutY="357.0" mnemonicParsing="false" onAction="#clickOnVous4" text="Êtes-vous ce joueur?" visible="false" />
+      <TextField fx:id="saisieNom5" layoutX="56.0" layoutY="403.0" promptText="Nom du joueur 5" visible="false" />
+      <ComboBox fx:id="nbCarte5" layoutX="272.0" layoutY="403.0" prefWidth="105.0" visible="false" />
+      <CheckBox fx:id="vous5" layoutX="422.0" layoutY="408.0" mnemonicParsing="false" onAction="#clickOnVous5" text="Êtes-vous ce joueur?" visible="false" />
+      <TextField fx:id="saisieNom6" layoutX="56.0" layoutY="454.0" promptText="Nom du joueur 6" visible="false" />
+      <ComboBox fx:id="nbCarte6" layoutX="272.0" layoutY="454.0" prefWidth="105.0" visible="false" />
+      <CheckBox fx:id="vous6" layoutX="422.0" layoutY="459.0" mnemonicParsing="false" onAction="#clickOnVous6" text="Êtes-vous ce joueur?" visible="false" />
+      <Button fx:id="retour" layoutX="87.0" layoutY="528.0" minWidth="101.0" mnemonicParsing="false" onAction="#clickOnRetour" text="Retour" />
+      <Button fx:id="commencer" disable="true" layoutX="385.0" layoutY="528.0" mnemonicParsing="false" onAction="#clickOnCommencer" text="Commencer" />
+   </children>
+</AnchorPane>

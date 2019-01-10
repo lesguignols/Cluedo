@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ChoixJeuController">
+   <children>
+      <CheckBox fx:id="superCluedo" layoutX="64.0" layoutY="249.0" mnemonicParsing="false" onAction="#clickOnSuperCluedo" text="SuperCluedo" />
+      <CheckBox fx:id="simpson" layoutX="423.0" layoutY="249.0" mnemonicParsing="false" onAction="#clickOnSimpson" text="Simpson" />
+      <CheckBox fx:id="meereen" layoutX="62.0" layoutY="330.0" mnemonicParsing="false" onAction="#clickOnMeereen" text="GoT:Meereen" />
+      <CheckBox fx:id="donjon" layoutX="388.0" layoutY="330.0" mnemonicParsing="false" onAction="#clickOnDonjon" text="GoT:DonjonRouge" />
+      <Button fx:id="suivant" disable="true" layoutX="340.0" layoutY="480.0" mnemonicParsing="false" onAction="#clickOnSuivant" text="Suivant" />
+      <Label layoutX="172.0" layoutY="48.0" text="CHOIX DU JEU">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Label>
+      <Button fx:id="retour" layoutX="182.0" layoutY="480.0" mnemonicParsing="false" onAction="#clickOnRetour" prefWidth="69.0" text="Retour" />
+   </children>
+</AnchorPane>

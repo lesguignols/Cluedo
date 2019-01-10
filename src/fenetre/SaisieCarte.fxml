@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SaisieCarteController">
+   <children>
+      <Label layoutX="99.0" layoutY="21.0" text="Sélection de vos cartes">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="carte8" layoutX="225.0" layoutY="105.0" maxHeight="30.0" minHeight="30.0" prefWidth="150.0" visible="false" />
+      <ChoiceBox fx:id="carte6" layoutX="225.0" layoutY="150.0" maxHeight="30.0" minHeight="30.0" prefWidth="150.0" visible="false" />
+      <ChoiceBox fx:id="carte4" layoutX="225.0" layoutY="195.0" maxHeight="30.0" minHeight="30.0" prefWidth="150.0" visible="false" />
+      <ChoiceBox fx:id="carte1" layoutX="225.0" layoutY="240.0" maxHeight="30.0" minHeight="30.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="carte2" layoutX="225.0" layoutY="285.0" maxHeight="30.0" minHeight="30.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="carte3" layoutX="225.0" layoutY="330.0" maxHeight="30.0" minHeight="30.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="carte5" layoutX="225.0" layoutY="375.0" maxHeight="30.0" minHeight="30.0" prefWidth="150.0" visible="false" />
+      <ChoiceBox fx:id="carte7" layoutX="225.0" layoutY="420.0" maxHeight="30.0" minHeight="30.0" prefWidth="150.0" visible="false" />
+      <ChoiceBox fx:id="carte9" layoutX="225.0" layoutY="465.0" maxHeight="30.0" minHeight="30.0" prefWidth="150.0" visible="false" />
+      <Button fx:id="retour" layoutX="154.0" layoutY="555.0" maxWidth="69.0" minWidth="69.0" mnemonicParsing="false" onAction="#clickOnRetour" prefWidth="69.0" text="Retour" AnchorPane.bottomAnchor="30.0" />
+      <Button fx:id="suivant" layoutX="377.0" layoutY="555.0" mnemonicParsing="false" onAction="#clickOnSuivant" text="Suivant" AnchorPane.bottomAnchor="30.0" />
+   </children>
+</AnchorPane>

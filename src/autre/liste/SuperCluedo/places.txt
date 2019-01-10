@@ -1,0 +1,12 @@
+Jardin
+Kiosque
+Grand salon
+Salle a manger
+Cuisine
+Grange
+Petit salon
+Veranda
+Salle de billard
+Bibliotheque
+Fontaine
+Bureau

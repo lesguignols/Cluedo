@@ -1,0 +1,20 @@
+Les joueurs:
+vous 5 cartes
+moutarde 5 cartes
+violet 4 cartes
+rose 4 cartes
+
+Carte que vous possedez:
+cuisine
+entree
+revolver
+chandelier
+pervenche
+
+Les hypotheses:
+n°	suspect		arme			lieu					demande		pasOk		=> carte qui est révélée à vous
+
+
+
+
+Solution:
