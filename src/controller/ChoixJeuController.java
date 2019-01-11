@@ -1,8 +1,12 @@
 package controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import application.LanceurCluedo;
+import autre.Carte;
+import autre.Hypothese;
+import autre.Joueur;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -110,17 +114,17 @@ public class ChoixJeuController {
 
     @FXML
     void clickOnRetour(ActionEvent event) throws IOException {
-		LanceurCluedo.setHyp(null);
-		LanceurCluedo.setLs(null);
-		LanceurCluedo.setLa(null);
-		LanceurCluedo.setLl(null);
-		LanceurCluedo.setLj(null);
-		LanceurCluedo.setLc(null);
-		LanceurCluedo.setLcj(null);
-		LanceurCluedo.setNomJoueur(null);
-		LanceurCluedo.setHypSuspect(null);
-		LanceurCluedo.setHypArme(null);
-		LanceurCluedo.setHypLieu(null);
+		LanceurCluedo.setHyp(new ArrayList<Hypothese>());
+		LanceurCluedo.setLs(new ArrayList<Carte>());
+		LanceurCluedo.setLa(new ArrayList<Carte>());
+		LanceurCluedo.setLl(new ArrayList<Carte>());
+		LanceurCluedo.setLj(new ArrayList<Joueur>());
+		LanceurCluedo.setLc(new ArrayList<Carte>());
+		LanceurCluedo.setLcj(new ArrayList<String>());
+		LanceurCluedo.setNomJoueur("");
+		LanceurCluedo.setHypSuspect("");
+		LanceurCluedo.setHypArme("");
+		LanceurCluedo.setHypLieu("");
 		
     	BorderPane borderpane = null;
 		FXMLLoader loader = new FXMLLoader();

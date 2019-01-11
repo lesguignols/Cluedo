@@ -31,17 +31,9 @@ public class CarteReveleController {
 		
 		nom.setText(LanceurCluedo.getNomJoueur() + " vous a révélé quelle carte?");
 
-		for (Carte c: LanceurCluedo.getLs()) {
-			listeCartes.add(c.getNom());
-		}
-
-		for (Carte c: LanceurCluedo.getLa()) {
-			listeCartes.add(c.getNom());
-		}
-
-		for (Carte c: LanceurCluedo.getLl()) {
-			listeCartes.add(c.getNom());
-		}
+		listeCartes.add(LanceurCluedo.getHypSuspect());
+		listeCartes.add(LanceurCluedo.getHypArme());
+		listeCartes.add(LanceurCluedo.getHypLieu());
 
 		carte.setItems(listeCartes);
 		carte.setValue(listeCartes.get(0));
@@ -55,14 +47,11 @@ public class CarteReveleController {
 				carte.getValue().equals(LanceurCluedo.getHypLieu())) {
 			if (!LanceurCluedo.getLcj().contains(carte.getValue())) {
 				for (Joueur j: LanceurCluedo.getLj()) {
-					for (Carte c: j.getLc()) {
+					for (Carte c: LanceurCluedo.getLc()) {
 						if (c.getNom().equals(carte.getValue())) {
 							if (j.getNom().equals(LanceurCluedo.getNomJoueur())) {
-								c.setEtat("V");
+								c.setEtat(j.getNumJoueur(), "V");
 								peutFermer = true;
-							}
-							else {
-								c.setEtat("X");
 							}
 						}
 					}

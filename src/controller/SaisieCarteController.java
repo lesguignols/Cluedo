@@ -1,9 +1,11 @@
 package controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import application.LanceurCluedo;
 import autre.Carte;
+import autre.Hypothese;
 import autre.Joueur;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -114,17 +116,17 @@ public class SaisieCarteController {
 
 	@FXML
 	void clickOnRetour(ActionEvent event) throws IOException {
-		LanceurCluedo.setHyp(null);
-		LanceurCluedo.setLs(null);
-		LanceurCluedo.setLa(null);
-		LanceurCluedo.setLl(null);
-		LanceurCluedo.setLj(null);
-		LanceurCluedo.setLc(null);
-		LanceurCluedo.setLcj(null);
-		LanceurCluedo.setNomJoueur(null);
-		LanceurCluedo.setHypSuspect(null);
-		LanceurCluedo.setHypArme(null);
-		LanceurCluedo.setHypLieu(null);
+		LanceurCluedo.setHyp(new ArrayList<Hypothese>());
+		LanceurCluedo.setLs(new ArrayList<Carte>());
+		LanceurCluedo.setLa(new ArrayList<Carte>());
+		LanceurCluedo.setLl(new ArrayList<Carte>());
+		LanceurCluedo.setLj(new ArrayList<Joueur>());
+		LanceurCluedo.setLc(new ArrayList<Carte>());
+		LanceurCluedo.setLcj(new ArrayList<String>());
+		LanceurCluedo.setNomJoueur("");
+		LanceurCluedo.setHypSuspect("");
+		LanceurCluedo.setHypArme("");
+		LanceurCluedo.setHypLieu("");
 		
 		AnchorPane anchorpane = null;
 		FXMLLoader loader = new FXMLLoader();
@@ -156,6 +158,7 @@ public class SaisieCarteController {
 									c.getNom().equals(carte2.getValue()) ||
 									c.getNom().equals(carte3.getValue())) {
 								c.setEtat(numJoueur, "V");
+								LanceurCluedo.getLcj().add(c.getNom());
 							}
 							else if (!c.getNom().equals(carte1.getValue()) &&
 									!c.getNom().equals(carte2.getValue()) &&
@@ -186,6 +189,7 @@ public class SaisieCarteController {
 									c.getNom().equals(carte3.getValue()) ||
 									c.getNom().equals(carte4.getValue())) {
 								c.setEtat(numJoueur, "V");
+								LanceurCluedo.getLcj().add(c.getNom());
 							}
 							else if (!c.getNom().equals(carte1.getValue()) &&
 									!c.getNom().equals(carte2.getValue()) &&
@@ -225,6 +229,7 @@ public class SaisieCarteController {
 									c.getNom().equals(carte4.getValue()) ||
 									c.getNom().equals(carte5.getValue())) {
 								c.setEtat(numJoueur, "V");
+								LanceurCluedo.getLcj().add(c.getNom());
 							}
 							else if (!c.getNom().equals(carte1.getValue()) &&
 									!c.getNom().equals(carte2.getValue()) &&
@@ -273,6 +278,7 @@ public class SaisieCarteController {
 									c.getNom().equals(carte5.getValue()) ||
 									c.getNom().equals(carte6.getValue())) {
 								c.setEtat(numJoueur, "V");
+								LanceurCluedo.getLcj().add(c.getNom());
 							}
 							else if (!c.getNom().equals(carte1.getValue()) &&
 									!c.getNom().equals(carte2.getValue()) &&
@@ -331,6 +337,7 @@ public class SaisieCarteController {
 									c.getNom().equals(carte6.getValue()) ||
 									c.getNom().equals(carte7.getValue())) {
 								c.setEtat(numJoueur, "V");
+								LanceurCluedo.getLcj().add(c.getNom());
 							}
 							else if (!c.getNom().equals(carte1.getValue()) &&
 									!c.getNom().equals(carte2.getValue()) &&
@@ -411,6 +418,7 @@ public class SaisieCarteController {
 									c.getNom().equals(carte8.getValue()) ||
 									c.getNom().equals(carte9.getValue())) {
 								c.setEtat(numJoueur, "V");
+								LanceurCluedo.getLcj().add(c.getNom());
 							}
 							else if (!c.getNom().equals(carte1.getValue()) &&
 									!c.getNom().equals(carte2.getValue()) &&

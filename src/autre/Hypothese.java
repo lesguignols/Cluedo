@@ -1,7 +1,5 @@
 package autre;
 
-import application.LanceurCluedo;
-
 public class Hypothese {
 
 	private String suspect;

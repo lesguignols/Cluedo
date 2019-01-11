@@ -181,4 +181,12 @@ public class Carte {
 	public void setGenre(String genre) {
 		this.genre = genre;
 	}
+
+	public String string() {
+		return "Carte [nom=" + nom + ", etatJ1=" + etatJ1 + ", etatJ2=" + etatJ2 + ", etatJ3=" + etatJ3 + ", etatJ4="
+				+ etatJ4 + ", etatJ5=" + etatJ5 + ", etatJ6=" + etatJ6 + ", etatJeu=" + etatJeu + ", genre=" + genre
+				+ "]";
+	}
+	
+	
 }
