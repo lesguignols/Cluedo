@@ -1,5 +1,7 @@
 package autre;
 
+import application.LanceurCluedo;
+
 public class Joueur {
 
 	private String nom;
@@ -7,6 +9,14 @@ public class Joueur {
 	private boolean vous;
 	private int nbCarte;
 	private int numJoueur;
+	
+	public Joueur() {
+		this.nom = "";
+		this.couleur = "";
+		this.vous = false;
+		this.nbCarte = 0;
+		this.numJoueur = 0;
+	}
 
 	public Joueur(String nom, String couleur, int numJoueur, boolean vous, int nbCarte) {
 		this.nom = nom;
@@ -54,36 +64,24 @@ public class Joueur {
 		return numJoueur;
 	}
 
-	/*public void maj() {
+	public void maj() {
 		for (Hypothese h: LanceurCluedo.getHyp()) {
 			for (Joueur j: LanceurCluedo.getLj()) {
 				if (j.getNom().equals(h.getJoueurPasOk())) {
 					int nbCarteNonPossede = 0;
-					for (Carte c: j.getLc()) {
-						if ((c.getNom().equals(h.getSuspect()) && c.getEtat().equals("X")) ||
-								(c.getNom().equals(h.getArme()) && c.getEtat().equals("X")) ||
-								(c.getNom().equals(h.getLieu()) && c.getEtat().equals("X"))) {
+					for (Carte c: LanceurCluedo.getLc()) {
+						if ((c.getNom().equals(h.getSuspect()) && c.getEtat(j.getNumJoueur()).equals("X")) ||
+								(c.getNom().equals(h.getArme()) && c.getEtat(j.getNumJoueur()).equals("X")) ||
+								(c.getNom().equals(h.getLieu()) && c.getEtat(j.getNumJoueur()).equals("X"))) {
 							nbCarteNonPossede++;
 						}
 					}
 					if (nbCarteNonPossede == 2) {
-						for (Carte c: j.getLc()) {
-							if ((c.getNom().equals(h.getSuspect()) && !c.getEtat().equals("X")) ||
-									(c.getNom().equals(h.getArme()) && !c.getEtat().equals("X")) ||
-									(c.getNom().equals(h.getLieu()) && !c.getEtat().equals("X"))) {
-								c.setEtat("V");
-							}
-						}
-					}
-					for (Carte c: j.getLc()) {
-						if (c.getEtat().equals("V")) {
-							for (Joueur j1: LanceurCluedo.getLj()) {
-								for (Carte c1: j1.getLc()) {
-									if (c1.getNom().equals(c.getNom()) &&
-											!j.getNom().equals(j1.getNom())) {
-										c1.setEtat("X");
-									}
-								}
+						for (Carte c: LanceurCluedo.getLc()) {
+							if ((c.getNom().equals(h.getSuspect()) && !c.getEtat(j.getNumJoueur()).equals("X")) ||
+									(c.getNom().equals(h.getArme()) && !c.getEtat(j.getNumJoueur()).equals("X")) ||
+									(c.getNom().equals(h.getLieu()) && !c.getEtat(j.getNumJoueur()).equals("X"))) {
+								c.setEtat(j.getNumJoueur(),"V");
 							}
 						}
 					}
@@ -93,43 +91,37 @@ public class Joueur {
 
 		for (Joueur j: LanceurCluedo.getLj()) {
 			int nbCartePossede = 0;
-			for (Carte c: j.getLc()) {
-				if (c.getEtat().equals("V")) {
+			for (Carte c: LanceurCluedo.getLc()) {
+				if (c.getEtat(j.getNumJoueur()).equals("V")) {
 					nbCartePossede++;
 				}
 			}
 			if (nbCartePossede == j.getNbCarte()) {
-				for (Carte c: j.getLc()) {
-					if (!c.getEtat().equals("V")) {
-						c.setEtat("X");
+				for (Carte c: LanceurCluedo.getLc()) {
+					if (!c.getEtat(j.getNumJoueur()).equals("V") && 
+							!c.getNom().equals("Suspects") &&
+							!c.getNom().equals("Armes") &&
+							!c.getNom().equals("Lieux")) {
+						c.setEtat(j.getNumJoueur(),"X");
 					}
 				}
 			}
 		}
 
-		for (Joueur j: LanceurCluedo.getLj()) {
-			for (Carte c: j.getLc()) {
-				if (!c.getEtat().equals("X") && !c.getEtat().equals("X")) {
-					int nbJoueurNePossedePas = 0;
-					for (Joueur j1: LanceurCluedo.getLj()) {
-						if (!j1.getNom().equals(j.getNom())) {
-							for (Carte c1: j1.getLc()) {
-								if (c.getNom().equals(c1.getNom()) && c1.getEtat().equals("X")) {
-									nbJoueurNePossedePas++;
-								}
-							}
-						}
-					}
-					if (nbJoueurNePossedePas == (LanceurCluedo.getLj().size() - 1)) {
-						c.setEtat("V");
-						for (Carte c2: j.getLc()) {
-							if (c2.getGenre().equals(c.getGenre()) && !c2.getNom().equals(c.getNom())) {
-								c2.setEtat("X");
-							}
-						}
+		for (Carte c: LanceurCluedo.getLc()) {
+			int nbJoueurNePossedePas = 0;
+			for (Joueur j: LanceurCluedo.getLj()) {
+				if (c.getEtat(j.getNumJoueur()).equals("X") && !j.getNom().equals("Le jeu")) {
+					nbJoueurNePossedePas++;
+				}
+			}
+			if (nbJoueurNePossedePas == (LanceurCluedo.getLj().size() - 1)) {
+				for (Joueur j: LanceurCluedo.getLj()) {
+					if (!c.getEtat(j.getNumJoueur()).equals("X")) {
+						c.setEtat(j.getNumJoueur(), "V");
 					}
 				}
 			}
 		}
-	}*/
+	}
 }

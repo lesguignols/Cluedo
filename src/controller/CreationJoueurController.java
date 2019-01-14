@@ -321,6 +321,13 @@ public class CreationJoueurController {
     		LanceurCluedo.setLs(LanceurCluedo.getType());
     		LanceurCluedo.setLa(LanceurCluedo.getType());
     		LanceurCluedo.setLl(LanceurCluedo.getType());
+    		
+    		for (Joueur j: LanceurCluedo.getLj()) {
+    			if (j.isVous()) {
+    				LanceurCluedo.setNomVous(j.getNom());
+    			}
+    		}
+    		
     		AnchorPane anchorpane = null;
     		FXMLLoader loader = new FXMLLoader();
     		

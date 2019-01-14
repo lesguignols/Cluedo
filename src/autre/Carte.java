@@ -172,6 +172,86 @@ public class Carte {
 				this.etatJeu = "!";
 			}
 		}
+		else if (etat.equals("?")) {
+			if (numJoueur == 1) {
+				this.etatJ1 = "?";
+			}
+			else if (numJoueur == 2) {
+				this.etatJ2 = "?";
+			}
+			else if (numJoueur == 3) {
+				this.etatJ3 = "?";
+			}
+			else if (numJoueur == 4) {
+				this.etatJ4 = "?";
+			}
+			else if (numJoueur == 5) {
+				this.etatJ5 = "?";
+			}
+			else if (numJoueur == 6) {
+				this.etatJ6 = "?";
+			}
+			else if (numJoueur == 7) {
+				this.etatJeu = "?";
+			}
+		}
+		else if (etat.equals("-")) {
+			this.etatJ1 = "-";
+			this.etatJ2 = "-";
+			this.etatJ3 = "-";
+			this.etatJ4 = "-";
+			this.etatJ5 = "-";
+			this.etatJ6 = "-";
+			this.etatJeu = "-";
+		}
+		else {
+			if (numJoueur == 1) {
+				this.etatJ1 = etat;
+			}
+			else if (numJoueur == 2) {
+				this.etatJ2 = etat;
+			}
+			else if (numJoueur == 3) {
+				this.etatJ3 = etat;
+			}
+			else if (numJoueur == 4) {
+				this.etatJ4 = etat;
+			}
+			else if (numJoueur == 5) {
+				this.etatJ5 = etat;
+			}
+			else if (numJoueur == 6) {
+				this.etatJ6 = etat;
+			}
+			else if (numJoueur == 7) {
+				this.etatJeu = etat;
+			}
+		}
+	}
+	
+	public String getEtat(int numJoueur) {
+		if (numJoueur == 1) {
+			return this.getEtatJ1();
+		}
+		else if (numJoueur == 2) {
+			return this.getEtatJ2();
+		}
+		else if (numJoueur == 3) {
+			return this.getEtatJ3();
+		}
+		else if (numJoueur == 4) {
+			return this.getEtatJ4();
+		}
+		else if (numJoueur == 5) {
+			return this.getEtatJ5();
+		}
+		else if (numJoueur == 6) {
+			return this.getEtatJ6();
+		}
+		else if (numJoueur == 7) {
+			return this.getEtatJeu();
+		}
+		return "";
 	}
 
 	public String getGenre() {

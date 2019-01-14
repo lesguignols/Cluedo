@@ -39,58 +39,27 @@
                </content>
           </Tab>
             <Tab text="Liste carte">
-               <contextMenu>
-                  <ContextMenu>
-                    <items>
-                      <MenuItem fx:id="maj" mnemonicParsing="false" onAction="#maj" text="Mettre à jour les cartes" />
-                    </items>
-                  </ContextMenu>
-               </contextMenu>
                <content>
-                <AnchorPane maxHeight="590.0" maxWidth="600.0" minHeight="590.0" minWidth="600.0" prefHeight="590.0" prefWidth="600.0">
+                <AnchorPane maxHeight="565.0" maxWidth="600.0" minHeight="565.0" minWidth="600.0" prefHeight="565.0" prefWidth="600.0">
                      <children>
-                        <TableView fx:id="listeSuspect" layoutX="75.0" prefHeight="197.0" prefWidth="15.0" styleClass="table-column" stylesheets="@../css/application.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <TableView fx:id="listeCarte" layoutX="75.0" maxHeight="490.0" minHeight="490.0" prefHeight="490.0" prefWidth="15.0" styleClass="table-column" stylesheets="@../css/application.css" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="25.0">
                           <columns>
-                            <TableColumn fx:id="suspect" prefWidth="75.0" style="-fx-alignement: Center;" text="Suspect" />
-                            <TableColumn fx:id="sj1" prefWidth="75.0" style="-fx-alignement: Center;" text="J1" />
-                              <TableColumn fx:id="sj2" prefWidth="75.0" style="-fx-alignement: Center;" text="J2" />
-                              <TableColumn fx:id="sj3" prefWidth="75.0" style="-fx-alignement: Center;" text="J3" />
-                              <TableColumn fx:id="sj4" prefWidth="75.0" style="-fx-alignement: Center;" text="J4" />
-                              <TableColumn fx:id="sj5" prefWidth="75.0" style="-fx-alignement: Center;" text="J5" />
-                              <TableColumn fx:id="sj6" prefWidth="75.0" style="-fx-alignement: Center;" text="J6" />
+                            <TableColumn fx:id="nomCarte" editable="false" prefWidth="75.0" sortable="false" style="-fx-alignement: Center;" text="Nom carte" />
+                            <TableColumn fx:id="ej1" editable="false" prefWidth="75.0" sortable="false" style="-fx-alignement: Center;" text="J1" />
+                              <TableColumn fx:id="ej2" editable="false" prefWidth="75.0" sortable="false" style="-fx-alignement: Center;" text="J2" />
+                              <TableColumn fx:id="ej3" editable="false" prefWidth="75.0" sortable="false" style="-fx-alignement: Center;" text="J3" />
+                              <TableColumn fx:id="ej4" editable="false" prefWidth="75.0" sortable="false" style="-fx-alignement: Center;" text="J4" />
+                              <TableColumn fx:id="ej5" editable="false" prefWidth="75.0" sortable="false" style="-fx-alignement: Center;" text="J5" />
+                              <TableColumn fx:id="ej6" editable="false" prefWidth="75.0" sortable="false" style="-fx-alignement: Center;" text="J6" />
                           </columns>
                            <columnResizePolicy>
                               <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                            </columnResizePolicy>
                         </TableView>
-                        <TableView fx:id="listeArme" layoutX="10.0" layoutY="195.5" prefHeight="197.0" prefWidth="600.0" styleClass="table-column" stylesheets="@../css/application.css" AnchorPane.bottomAnchor="196.5" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="196.5">
-                           <columnResizePolicy>
-                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-                           </columnResizePolicy>
-                           <columns>
-                              <TableColumn fx:id="arme" prefWidth="75.0" text="Arme" />
-                              <TableColumn fx:id="aj1" prefWidth="75.0" text="J1" />
-                              <TableColumn fx:id="aj2" prefWidth="75.0" text="J2" />
-                              <TableColumn fx:id="aj3" prefWidth="75.0" text="J3" />
-                              <TableColumn fx:id="aj4" prefWidth="75.0" text="J4" />
-                              <TableColumn fx:id="aj5" prefWidth="75.0" text="J5" />
-                              <TableColumn fx:id="aj6" prefWidth="75.0" text="J6" />
-                           </columns>
-                        </TableView>
-                        <TableView fx:id="listeLieu" layoutX="10.0" prefHeight="197.0" prefWidth="600.0" styleClass="table-column" stylesheets="@../css/application.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-                           <columnResizePolicy>
-                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-                           </columnResizePolicy>
-                           <columns>
-                              <TableColumn fx:id="lieu" prefWidth="75.0" text="Lieu" />
-                              <TableColumn fx:id="lj1" prefWidth="75.0" text="J1" />
-                              <TableColumn fx:id="lj2" prefWidth="75.0" text="J2" />
-                              <TableColumn fx:id="lj3" prefWidth="75.0" text="J3" />
-                              <TableColumn fx:id="lj4" prefWidth="75.0" text="J4" />
-                              <TableColumn fx:id="lj5" prefWidth="75.0" text="J5" />
-                              <TableColumn fx:id="lj6" prefWidth="75.0" text="J6" />
-                           </columns>
-                        </TableView>
+                        <RadioButton fx:id="boutonSuspect" layoutX="14.0" layoutY="530.0" mnemonicParsing="false" onAction="#clickOnSuspect" text="Suspect" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" />
+                        <RadioButton fx:id="boutonArme" layoutX="269.0" layoutY="529.0" mnemonicParsing="false" onAction="#clickOnArme" text="Arme" AnchorPane.bottomAnchor="15.0" />
+                        <RadioButton fx:id="boutonLieu" layoutX="476.0" layoutY="530.0" mnemonicParsing="false" onAction="#clickOnLieu" text="Lieu" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="15.0" />
+                        <RadioButton fx:id="boutonTout" layoutX="271.0" layoutY="501.0" mnemonicParsing="false" onAction="#clickOnTout" selected="true" text="Tout" AnchorPane.bottomAnchor="45.0" />
                      </children>
                   </AnchorPane>
                </content>

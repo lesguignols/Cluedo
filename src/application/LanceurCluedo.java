@@ -31,6 +31,7 @@ public class LanceurCluedo extends Application {
 	private static ArrayList<String> lcj = new ArrayList<String>();
 	private static ArrayList<Hypothese> hyp = new ArrayList<Hypothese>();
 	private static String nomJoueur = "";
+	private static String nomVous = "";
 	private static String hypSuspect = "";
 	private static String hypArme = "";
 	private static String hypLieu = "";
@@ -89,6 +90,10 @@ public class LanceurCluedo extends Application {
 				InputStreamReader lecture = new InputStreamReader(flux);
 				BufferedReader buff = new BufferedReader(lecture);
 				String ligne;
+				Carte carte = new Carte("Suspects",genre);
+				carte.setEtat(0, "-");
+				ls.add(carte);
+				lc.add(carte);
 				while ((ligne=buff.readLine())!=null){
 					Carte c = new Carte(ligne,genre);
 					ls.add(c);
@@ -119,6 +124,10 @@ public class LanceurCluedo extends Application {
 				InputStreamReader lecture = new InputStreamReader(flux);
 				BufferedReader buff = new BufferedReader(lecture);
 				String ligne;
+				Carte carte = new Carte("Armes",genre);
+				carte.setEtat(0, "-");
+				la.add(carte);
+				lc.add(carte);
 				while ((ligne=buff.readLine())!=null){
 					Carte c = new Carte(ligne,genre);
 					la.add(c);
@@ -148,6 +157,10 @@ public class LanceurCluedo extends Application {
 				InputStreamReader lecture = new InputStreamReader(flux);
 				BufferedReader buff = new BufferedReader(lecture);
 				String ligne;
+				Carte carte = new Carte("Lieux",genre);
+				carte.setEtat(0, "-");
+				ll.add(carte);
+				lc.add(carte);
 				while ((ligne=buff.readLine())!=null){
 					Carte c = new Carte(ligne,genre);
 					ll.add(c);
@@ -247,6 +260,14 @@ public class LanceurCluedo extends Application {
 
 	public static void setLl(ArrayList<Carte> ll) {
 		LanceurCluedo.ll = ll;
+	}
+
+	public static String getNomVous() {
+		return nomVous;
+	}
+
+	public static void setNomVous(String nomVous) {
+		LanceurCluedo.nomVous = nomVous;
 	}
 
 

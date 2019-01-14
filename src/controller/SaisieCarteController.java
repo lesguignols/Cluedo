@@ -56,15 +56,21 @@ public class SaisieCarteController {
 		ObservableList<String> listeCartes = FXCollections.observableArrayList();
 
 		for (Carte c: LanceurCluedo.getLs()) {
-			listeCartes.add(c.getNom());
+			if (!c.getNom().equals("Suspects")) {
+				listeCartes.add(c.getNom());
+			}
 		}
 
 		for (Carte c: LanceurCluedo.getLa()) {
-			listeCartes.add(c.getNom());
+			if (!c.getNom().equals("Armes")) {
+				listeCartes.add(c.getNom());
+			}
 		}
 
 		for (Carte c: LanceurCluedo.getLl()) {
-			listeCartes.add(c.getNom());
+			if (!c.getNom().equals("Lieux")) {
+				listeCartes.add(c.getNom());
+			}
 		}
 		
 		for (Joueur joueur: LanceurCluedo.getLj()) {
@@ -112,6 +118,7 @@ public class SaisieCarteController {
 		carte7.setValue("");
 		carte8.setValue("");
 		carte9.setValue("");
+		
 	}
 
 	@FXML
@@ -162,7 +169,10 @@ public class SaisieCarteController {
 							}
 							else if (!c.getNom().equals(carte1.getValue()) &&
 									!c.getNom().equals(carte2.getValue()) &&
-									!c.getNom().equals(carte3.getValue())) {
+									!c.getNom().equals(carte3.getValue()) &&
+									!c.getNom().equals("Suspects") &&
+									!c.getNom().equals("Armes") &&
+									!c.getNom().equals("Lieux")) {
 								c.setEtat(numJoueur, "X");
 							}
 						}
@@ -194,7 +204,10 @@ public class SaisieCarteController {
 							else if (!c.getNom().equals(carte1.getValue()) &&
 									!c.getNom().equals(carte2.getValue()) &&
 									!c.getNom().equals(carte3.getValue()) &&
-									!c.getNom().equals(carte4.getValue())) {
+									!c.getNom().equals(carte4.getValue()) &&
+									!c.getNom().equals("Suspects") &&
+									!c.getNom().equals("Armes") &&
+									!c.getNom().equals("Lieux")) {
 								c.setEtat(numJoueur, "X");
 							}
 						}
@@ -235,7 +248,10 @@ public class SaisieCarteController {
 									!c.getNom().equals(carte2.getValue()) &&
 									!c.getNom().equals(carte3.getValue()) &&
 									!c.getNom().equals(carte4.getValue()) &&
-									!c.getNom().equals(carte5.getValue())) {
+									!c.getNom().equals(carte5.getValue()) &&
+									!c.getNom().equals("Suspects") &&
+									!c.getNom().equals("Armes") &&
+									!c.getNom().equals("Lieux")) {
 								c.setEtat(numJoueur, "X");
 							}
 						}
@@ -285,7 +301,10 @@ public class SaisieCarteController {
 									!c.getNom().equals(carte3.getValue()) &&
 									!c.getNom().equals(carte4.getValue()) &&
 									!c.getNom().equals(carte5.getValue()) &&
-									!c.getNom().equals(carte6.getValue())) {
+									!c.getNom().equals(carte6.getValue()) &&
+									!c.getNom().equals("Suspects") &&
+									!c.getNom().equals("Armes") &&
+									!c.getNom().equals("Lieux")) {
 								c.setEtat(numJoueur, "X");
 							}
 						}
@@ -345,7 +364,10 @@ public class SaisieCarteController {
 									!c.getNom().equals(carte4.getValue()) &&
 									!c.getNom().equals(carte5.getValue()) &&
 									!c.getNom().equals(carte6.getValue()) &&
-									!c.getNom().equals(carte7.getValue())) {
+									!c.getNom().equals(carte7.getValue()) &&
+									!c.getNom().equals("Suspects") &&
+									!c.getNom().equals("Armes") &&
+									!c.getNom().equals("Lieux")) {
 								c.setEtat(numJoueur, "X");
 							}
 						}
@@ -428,7 +450,10 @@ public class SaisieCarteController {
 									!c.getNom().equals(carte6.getValue()) &&
 									!c.getNom().equals(carte7.getValue()) &&
 									!c.getNom().equals(carte8.getValue()) &&
-									!c.getNom().equals(carte9.getValue())) {
+									!c.getNom().equals(carte9.getValue()) &&
+									!c.getNom().equals("Suspects") &&
+									!c.getNom().equals("Armes") &&
+									!c.getNom().equals("Lieux")) {
 								c.setEtat(numJoueur, "X");
 							}
 						}

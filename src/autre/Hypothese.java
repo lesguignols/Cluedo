@@ -1,5 +1,7 @@
 package autre;
 
+import application.LanceurCluedo;
+
 public class Hypothese {
 
 	private String suspect;
@@ -14,7 +16,7 @@ public class Hypothese {
 		this.lieu = lieu;
 		this.joueurDemandant = joueurDemandant;
 		this.joueurPasOk = joueurPasOk;
-		//this.modifListeCarte();
+		this.modifListeCarte();
 	}
 
 	public String getSuspect() {
@@ -57,259 +59,72 @@ public class Hypothese {
 		this.joueurPasOk = joueurPasOk;
 	}
 
-	/*private void modifListeCarte() {
-		int numJD = -1, numJPO = -2, iterateur = 0;
+	private void modifListeCarte() {
+		Joueur joueurDemandant = new Joueur(), joueurPasOk = new Joueur();
 		for (Joueur j: LanceurCluedo.getLj()) {
 			if (j.getNom().equals(this.joueurDemandant)) {
-				numJD = iterateur;
+				joueurDemandant = j;
 			}
 			if (j.getNom().equals(this.joueurPasOk)) {
-				numJPO = iterateur;
-			}
-			iterateur++;
-		}
-
-		//Joueur qui demande est celui qui n'est pas OK => personnes n'a les cartes sauf lui ou le jeu.
-		if (numJPO == LanceurCluedo.getLj().size()) {
-			for (Joueur j: LanceurCluedo.getLj()) {
-				if (!j.getNom().equals(joueurDemandant) && !j.getNom().equals("Le jeu")) {
-					for (Carte c: j.getLc()) {
-						if ((c.getNom().equals(this.suspect) ||
-								c.getNom().equals(this.arme) ||
-								c.getNom().equals(this.lieu)) 
-								&&
-								(!c.getEtat().equals("V"))) {
-							c.setEtat("X");
-						}
-					}
-				}
-				else if (j.getNom().equals("Le jeu")) {
-					int nbCarteNonPossede = 0;
-					for (Carte c: j.getLc()) {
-						if ((c.getNom().equals(this.suspect) && c.getEtat().equals("X")) ||
-								(c.getNom().equals(this.arme) && c.getEtat().equals("X")) ||
-								(c.getNom().equals(this.lieu) && c.getEtat().equals("X"))) {
-							nbCarteNonPossede++;
-						}
-					}
-					for (Carte c: j.getLc()) {
-						if (nbCarteNonPossede == 2) {
-							if ((c.getNom().equals(this.suspect) && !c.getEtat().equals("X")) || 
-									(c.getNom().equals(this.arme) && !c.getEtat().equals("X")) ||
-									(c.getNom().equals(this.lieu) && !c.getEtat().equals("X"))) {
-								c.setEtat("V");
-							}
-						}
-						else if (nbCarteNonPossede != 2){
-							if ((c.getNom().equals(this.suspect) || 
-									c.getNom().equals(this.arme) || 
-									c.getNom().equals(this.lieu))
-									&&
-									(!c.getEtat().equals("V") && !c.getEtat().equals("X"))) {
-								if (!c.getEtat().equals("O")) {
-									c.setEtat(c.getEtat() + "!");
-								}
-								else if (c.getEtat().equals("O")) {
-									c.setEtat("!");
-								}
-							}
-						}
-					}
-				}
+				joueurPasOk = j;
 			}
 		}
-
-
-		//le joueur qui demande se trouve avant le joueur pas OK dans la liste => les joueurs entre les 2 
-		//n'ont pas les cartes.
-		else if (numJD < numJPO) {
-			int i = 0;
-			for (Joueur j: LanceurCluedo.getLj()) {
-				//le joueur est entre celui qui a demandé et celui qui n'est pas OK
-				if (i > numJD && i < numJPO && !j.getNom().equals("Le jeu")) {
-					for (Carte c: j.getLc()) {
-						if ((c.getNom().equals(this.suspect) ||
-								c.getNom().equals(this.arme) ||
-								c.getNom().equals(this.lieu)) 
-								&&
-								(!c.getEtat().equals("V"))) {
-							c.setEtat("X");
-						}
-					}
-				}
-				//le joueur est celui qui a demandé
-				else if (i == numJD) {
-
-					for (Carte c: j.getLc()) {
-						if ((c.getNom().equals(this.suspect) || 
-								c.getNom().equals(this.arme) || 
-								c.getNom().equals(this.lieu))
-								&&
-								(!c.getEtat().equals("V") && !c.getEtat().equals("X"))) {
-							if (!c.getEtat().equals("O")) {
-								c.setEtat(c.getEtat() + "?");
-							}
-							else if (c.getEtat().equals("O")) {
-								c.setEtat("?");
-							}
-						}
-					}
-				}
-				//le joueur est celui qui n'est pas OK
-				else if (i == numJPO) {
-					int nbCarteNonPossede = 0;
-					for (Carte c: j.getLc()) {
-						if ((c.getNom().equals(this.suspect) && c.getEtat().equals("X")) ||
-								(c.getNom().equals(this.arme) && c.getEtat().equals("X")) ||
-								(c.getNom().equals(this.lieu) && c.getEtat().equals("X"))) {
-							nbCarteNonPossede++;
-						}
-					}
-					for (Carte c: j.getLc()) {
-						if (nbCarteNonPossede == 2) {
-							if ((c.getNom().equals(this.suspect) && !c.getEtat().equals("X")) || 
-									(c.getNom().equals(this.arme) && !c.getEtat().equals("X")) ||
-									(c.getNom().equals(this.lieu) && !c.getEtat().equals("X"))) {
-								c.setEtat("V");
-							}
-						}
-						else if (nbCarteNonPossede != 2){
-							if ((c.getNom().equals(this.suspect) || 
-									c.getNom().equals(this.arme) || 
-									c.getNom().equals(this.lieu))
-									&&
-									(!c.getEtat().equals("V") && !c.getEtat().equals("X"))) {
-								if (!c.getEtat().equals("O")) {
-									c.setEtat(c.getEtat() + "!");
-								}
-								else if (c.getEtat().equals("O")) {
-									c.setEtat("!");
-								}
-							}
-						}
-					}
-				}
-				else if (j.getNom().equals("Le jeu")) {
-					for (Carte c: j.getLc()) {
-						if ((c.getNom().equals(this.suspect) || 
-								c.getNom().equals(this.arme) || 
-								c.getNom().equals(this.lieu))
-								&&
-								(!c.getEtat().equals("V") && !c.getEtat().equals("X"))) {
-							if (!c.getEtat().equals("O")) {
-								c.setEtat(c.getEtat() + "?");
-							}
-							else if (c.getEtat().equals("O")) {
-								c.setEtat("?");
-							}
-						}
-					}
-				}
-				i++;
+		
+		int nbCarteNonPossede = 0;
+		for (Carte c: LanceurCluedo.getLc()) {
+			if ((c.getNom().equals(this.suspect) ||
+					c.getNom().equals(this.arme) ||
+					c.getNom().equals(this.lieu)) &&
+					c.getEtat(joueurPasOk.getNumJoueur()).equals("X")) {
+				nbCarteNonPossede++;
 			}
 		}
-
-
-		//le joueur qui demande se trouve après le joueur pas OK dans la liste => les joueurs qui ne sont pas
-		//entre les 2 dans la liste n'ont pas les cartes.
-		else if (numJD > numJPO) {
-			int i = 0;
-			for (Joueur j: LanceurCluedo.getLj()) {
-				//le joueur est entre celui qui a demandé et celui qui n'est pas OK
-				if ((i > numJD || i < numJPO) && !j.getNom().equals("Le jeu")) {
-					for (Carte c: j.getLc()) {
-						if ((c.getNom().equals(this.suspect) ||
-								c.getNom().equals(this.arme) ||
-								c.getNom().equals(this.lieu)) 
-								&&
-								(!c.getEtat().equals("V"))) {
-							c.setEtat("X");
-						}
+		
+		for (Carte c: LanceurCluedo.getLc()) {
+			//on cherche les bonnes cartes
+			if (c.getNom().equals(this.suspect) || c.getNom().equals(this.arme) || c.getNom().equals(this.lieu)) {
+				//modifie la valeur de l'état de la carte pour le joueur demandant
+				if (c.getEtat(joueurDemandant.getNumJoueur()).equals("O")) {
+					c.setEtat(joueurDemandant.getNumJoueur(), "?");
+				}
+				else if (!c.getEtat(joueurDemandant.getNumJoueur()).equals("V") && 
+							!c.getEtat(joueurDemandant.getNumJoueur()).equals("X")) {
+					c.setEtat(joueurDemandant.getNumJoueur(), c.getEtat(joueurDemandant.getNumJoueur()) + "?");
+				}
+				
+				//modifie la valeur de l'état de la carte pour le joueur pas ok
+				if (nbCarteNonPossede == 2) {
+					if (!c.getEtat(joueurPasOk.getNumJoueur()).equals("X")) {
+						c.setEtat(joueurPasOk.getNumJoueur(), "V");
 					}
 				}
-				//le joueur est celui qui n'est pas OK
-				else if (i == numJPO) {
-					int nbCarteNonPossede = 0;
-					for (Carte c: j.getLc()) {
-						if ((c.getNom().equals(this.suspect) && c.getEtat().equals("X")) ||
-								(c.getNom().equals(this.arme) && c.getEtat().equals("X")) ||
-								(c.getNom().equals(this.lieu) && c.getEtat().equals("X"))) {
-							nbCarteNonPossede++;
-						}
+				else {
+					if (c.getEtat(joueurPasOk.getNumJoueur()).equals("O")) {
+						c.setEtat(joueurPasOk.getNumJoueur(), "!");
 					}
-					for (Carte c: j.getLc()) {
-						if (nbCarteNonPossede == 2) {
-							if ((c.getNom().equals(this.suspect) && !c.getEtat().equals("X")) || 
-									(c.getNom().equals(this.arme) && !c.getEtat().equals("X")) ||
-									(c.getNom().equals(this.lieu) && !c.getEtat().equals("X"))) {
-								c.setEtat("V");
-							}
-						}
-						else if (nbCarteNonPossede != 2){
-							if ((c.getNom().equals(this.suspect) || 
-									c.getNom().equals(this.arme) || 
-									c.getNom().equals(this.lieu))
-									&&
-									(!c.getEtat().equals("V") && !c.getEtat().equals("X"))) {
-								if (!c.getEtat().equals("O")) {
-									c.setEtat(c.getEtat() + "!");
-								}
-								else if (c.getEtat().equals("O")) {
-									c.setEtat("!");
-								}
-							}
-						}
+					else if (!c.getEtat(joueurPasOk.getNumJoueur()).equals("V") && 
+								!c.getEtat(joueurPasOk.getNumJoueur()).equals("X")) {
+						c.setEtat(joueurPasOk.getNumJoueur(), c.getEtat(joueurPasOk.getNumJoueur()) + "!");
 					}
 				}
-				//le joueur est celui qui a demandé
-				else if (i == numJD) {
-					for (Carte c: j.getLc()) {
-						if ((c.getNom().equals(this.suspect) || 
-								c.getNom().equals(this.arme) || 
-								c.getNom().equals(this.lieu))
-								&&
-								(!c.getEtat().equals("V") && !c.getEtat().equals("X"))) {
-							if (!c.getEtat().equals("O")) {
-								c.setEtat(c.getEtat() + "?");
-							}
-							else if (c.getEtat().equals("O")) {
-								c.setEtat("?");
-							}
-						}
+				
+				//modifie la valeur de l'état de la carte des autres joueurs
+				for (Joueur j: LanceurCluedo.getLj()) {
+					//le joueur demandant est avant le joueur pas OK dans la liste
+					if ((joueurDemandant.getNumJoueur() < joueurPasOk.getNumJoueur()) &&
+							(j.getNumJoueur() > joueurDemandant.getNumJoueur()) &&
+							(j.getNumJoueur() < joueurPasOk.getNumJoueur())) {
+						c.setEtat(j.getNumJoueur(), "X");
 					}
-				}
-				else if (j.getNom().equals("Le jeu")) {
-					for (Carte c: j.getLc()) {
-						if ((c.getNom().equals(this.suspect) || 
-								c.getNom().equals(this.arme) || 
-								c.getNom().equals(this.lieu))
-								&&
-								(!c.getEtat().equals("V") && !c.getEtat().equals("X"))) {
-							if (!c.getEtat().equals("O")) {
-								c.setEtat(c.getEtat() + "?");
-							}
-							else if (c.getEtat().equals("O")) {
-								c.setEtat("?");
-							}
-						}
-					}
-				}
-				i++;
-			}
-		}
-
-		for (Joueur j: LanceurCluedo.getLj()) {
-			for (Joueur j1: LanceurCluedo.getLj()) {
-				if (!j.getNom().equals(j1.getNom())) {
-					for (Carte c: j.getLc()) {
-						for (Carte c1: j1.getLc()) {
-							if (c.getNom().equals(c1.getNom()) && c1.getEtat().equals("V")) {
-								c.setEtat("X");
-							}
-						}
+					
+					//le joueur pas OK est avant le joueur demandant dans la liste
+					if (joueurDemandant.getNumJoueur() > joueurPasOk.getNumJoueur() &&
+							(j.getNumJoueur() > joueurDemandant.getNumJoueur() ||
+							 j.getNumJoueur() < joueurPasOk.getNumJoueur())) {
+						c.setEtat(j.getNumJoueur(), "X");
 					}
 				}
 			}
 		}
-	}*/
+	}
 }
